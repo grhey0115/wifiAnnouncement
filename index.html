@@ -10,48 +10,91 @@
             font-family: 'Poppins', Arial, sans-serif;
             margin: 0;
             padding: 15px;
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(to bottom, #87CEEB, #1E90FF);
             color: #1a1a1a;
             line-height: 1.6;
+            position: relative;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15%;
+            background: linear-gradient(to top, #f2d675, #e6c35c);
+            z-index: -1;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            background: #FFD700;
+            border-radius: 50%;
+            box-shadow: 0 0 60px #FF8C00;
+            animation: sun-pulse 5s ease-in-out infinite;
+            z-index: -1;
+        }
+        @keyframes sun-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 60px #FF8C00; }
+            50% { transform: scale(1.05); box-shadow: 0 0 80px #FF8C00; }
         }
         .container {
             max-width: 100%;
             margin: 0 auto;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            border: 8px solid #FF8C00;
         }
         .portal-button {
-            display: block;
-            text-align: center;
-            background: #1976d2;
-            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #FF8C00;
+            color: #FFFFFF;
             font-weight: 600;
+            font-size: 1.3em;
             text-decoration: none;
-            padding: 12px;
-            border-radius: 30px;
-            margin: 0 auto 20px;
-            max-width: 300px;
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin: 0 auto 25px;
+            max-width: 350px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 3px solid #FFD700;
+            transition: all 0.3s ease;
+        }
+        .portal-button::after {
+            content: '➔';
             font-size: 1.2em;
-            transition: background 0.3s ease, transform 0.2s ease;
         }
         .portal-button:hover {
-            background: #d32f2f;
-            transform: scale(1.05);
+            background: #FF4500;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
         h1 {
             text-align: center;
-            color: #1a3c34;
+            color: #FF8C00;
             font-size: 2em;
             font-weight: 800;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
         .subtitle {
             text-align: center;
-            color: #2c3e50;
+            color: #1a3c34;
             font-size: 1.1em;
             font-weight: 400;
             margin-bottom: 25px;
@@ -59,16 +102,18 @@
         .announcement {
             margin-bottom: 25px;
             padding: 20px;
-            background: #fff3e0;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
-            border: 2px solid #ff5722;
-            transition: transform 0.3s ease;
+            border: 2px solid #FF8C00;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
         .announcement:hover {
-            transform: scale(1.02);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
         .announcement h2 {
-            color: #d32f2f;
+            color: #FF4500;
             font-size: 1.7em;
             font-weight: 600;
             margin-bottom: 10px;
@@ -76,41 +121,46 @@
             align-items: center;
             gap: 10px;
             text-transform: uppercase;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
         .announcement h2::before {
             content: '📣';
             font-size: 1.4em;
         }
         .highlight {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             padding: 15px;
-            border-left: 6px solid #ff5722;
+            border-left: 6px solid #FFD700;
             border-radius: 6px;
             font-size: 1.1em;
             font-weight: 400;
+            color: #FF8C00;
         }
         .messenger-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #ff5722;
-            color: #fff;
+            background: #FF8C00;
+            color: #FFFFFF;
             font-weight: 600;
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 30px;
-            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border: 2px solid #FFD700;
+            transition: all 0.3s ease;
         }
         .messenger-link:hover {
-            background: #d32f2f;
-            transform: scale(1.05);
+            background: #FF4500;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         .messenger-link img {
             width: 24px;
             height: 24px;
         }
         .date {
-            color: #5f6c7b;
+            color: #1a3c34;
             font-size: 0.9em;
             font-weight: 400;
             font-style: italic;
@@ -124,9 +174,9 @@
                 padding: 15px;
             }
             .portal-button {
-                font-size: 1em;
-                padding: 10px;
-                max-width: 250px;
+                font-size: 1.1em;
+                padding: 12px 20px;
+                max-width: 280px;
             }
             h1 {
                 font-size: 1.6em;
@@ -145,10 +195,16 @@
                 width: 20px;
                 height: 20px;
             }
+            body::before {
+                top: 20px;
+                right: 20px;
+                width: 80px;
+                height: 80px;
+            }
         }
         /* Accessibility */
         .portal-button:focus, .messenger-link:focus {
-            outline: 3px solid #ff5722;
+            outline: 3px solid #FFD700;
             outline-offset: 2px;
         }
         [role="region"] {
@@ -158,7 +214,7 @@
 </head>
 <body>
     <div class="container" role="main">
-        <a href="http://10.0.0.1" class="portal-button" aria-label="Go to PisoWiFi Portal">Link sa PisoWiFi </a>
+        <a href="http://10.0.0.1" class="portal-button" aria-label="Go to PisoWiFi Portal">PisoWiFi Portal</a>
         <h1>PisoWiFi Announcements</h1>
         <p class="subtitle">Don’t miss our latest offer and support info!</p>
 
@@ -174,7 +230,7 @@
             <h2>Contact on Messenger</h2>
             <div class="highlight">
                 <p>Naay Issue sa Time?</p>
-                <p>Kuwang ang time? Please <a href="https://m.me/pisowifi" class="messenger-link" aria-label="Contact support via Messenger"><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Logo">Contact on Messenger</a>.</p>
+                <p>Kuwang ang time? Please <a href="https://m.me/grhey0115" class="messenger-link" aria-label="Contact support via Messenger"><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Logo">Contact on Messenger</a>.</p>
             </div>
             <p class="date">May 27, 2025</p>
         </div>
