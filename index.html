@@ -22,6 +22,24 @@
             border-radius: 15px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
+        .portal-button {
+            display: block;
+            text-align: center;
+            background: #1976d2;
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 30px;
+            margin: 0 auto 20px;
+            max-width: 300px;
+            font-size: 1.2em;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .portal-button:hover {
+            background: #d32f2f;
+            transform: scale(1.05);
+        }
         h1 {
             text-align: center;
             color: #1a3c34;
@@ -105,6 +123,11 @@
             .container {
                 padding: 15px;
             }
+            .portal-button {
+                font-size: 1em;
+                padding: 10px;
+                max-width: 250px;
+            }
             h1 {
                 font-size: 1.6em;
             }
@@ -124,7 +147,7 @@
             }
         }
         /* Accessibility */
-        .messenger-link:focus {
+        .portal-button:focus, .messenger-link:focus {
             outline: 3px solid #ff5722;
             outline-offset: 2px;
         }
@@ -135,6 +158,7 @@
 </head>
 <body>
     <div class="container" role="main">
+        <a href="http://10.0.0.1" class="portal-button" aria-label="Go to PisoWiFi Portal">Link sa PisoWiFi </a>
         <h1>PisoWiFi Announcements</h1>
         <p class="subtitle">Don’t miss our latest offer and support info!</p>
 
@@ -150,7 +174,7 @@
             <h2>Contact on Messenger</h2>
             <div class="highlight">
                 <p>Naay Issue sa Time?</p>
-                <p>Kuwang ang time? Please <a href="https://m.me/grhey0115" class="messenger-link" aria-label="Contact support via Messenger"><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Logo">Contact on Messenger</a>.</p>
+                <p>Kuwang ang time? Please <a href="https://m.me/pisowifi" class="messenger-link" aria-label="Contact support via Messenger"><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Logo">Contact on Messenger</a>.</p>
             </div>
             <p class="date">May 27, 2025</p>
         </div>
